@@ -3,170 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ENT-BEAUTY 2026 : THE VISUAL IP</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Pretendard:wght@300;600;800&display=swap" rel="stylesheet">
+    <title>ENT-BEAUTY 2026 : THE VISUAL IP STRATEGY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #f8f8f8;
-            --accent: #d4af37; /* 럭셔리 골드 포인트 */
-            --bg: #000000;
-            --card: #111111;
-        }
-
+        :root { --primary: #f8f8f8; --accent: #d4af37; --bg: #000000; --card: #0a0a0a; --glass: rgba(255, 255, 255, 0.03); }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Pretendard', sans-serif;
-            background-color: var(--bg);
-            color: var(--primary);
-            line-height: 1.7;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=2000');
-            background-size: cover;
-            background-position: center;
-            border-bottom: 1px solid #333;
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 5rem;
-            font-style: italic;
-            margin-bottom: 20px;
-        }
-
-        .hero p { font-size: 1.2rem; letter-spacing: 0.3em; color: var(--accent); }
-
-        /* Magazine Layout */
-        .container { max-width: 1200px; margin: 0 auto; padding: 100px 20px; }
-
-        .section-header { margin-bottom: 60px; text-align: center; }
-        .section-header h2 { font-size: 3rem; font-family: 'Playfair Display', serif; margin-bottom: 10px; }
-        .section-header p { color: #888; text-transform: uppercase; letter-spacing: 2px; }
-
-        /* Trend Cards */
-        .trend-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
-        .trend-item {
-            background: var(--card);
-            padding: 40px;
-            border: 1px solid #222;
-            transition: all 0.5s ease;
-        }
-        .trend-item:hover { border-color: var(--accent); transform: translateY(-10px); }
-        .trend-item h3 { font-size: 1.5rem; color: var(--accent); margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 10px; }
-
-        /* Professional Table */
-        .data-section { margin-top: 150px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 30px; }
-        th { text-align: left; padding: 20px; border-bottom: 2px solid var(--accent); color: var(--accent); text-transform: uppercase; }
-        td { padding: 20px; border-bottom: 1px solid #222; }
-
-        /* Interactive Skill Creator Area */
-        .interactive-tool {
-            margin-top: 150px;
-            background: linear-gradient(45deg, #111, #000);
-            padding: 80px;
-            text-align: center;
-            border-radius: 4px;
-            border: 1px solid var(--accent);
-        }
-
-        .btn-skill {
-            background: none;
-            color: var(--accent);
-            border: 1px solid var(--accent);
-            padding: 15px 40px;
-            font-size: 1rem;
-            cursor: pointer;
-            margin-top: 30px;
-            transition: 0.3s;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-        .btn-skill:hover { background: var(--accent); color: #000; }
-
-        #skill-result { margin-top: 40px; font-size: 1.2rem; font-weight: 300; min-height: 50px; }
-
-        footer { padding: 80px 20px; text-align: center; color: #444; border-top: 1px solid #222; font-size: 0.9rem; }
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: var(--bg); color: var(--primary); line-height: 1.9; word-break: keep-all; overflow-x: hidden; }
+        
+        /* 와, 지린다 디자인: Hero */
+        .hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=2500'); background-size: cover; background-position: center; border-bottom: 1px solid #1a1a1a; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 12vw, 6rem); font-style: italic; margin-bottom: 15px; color: #fff; text-shadow: 0 5px 15px rgba(212, 175, 55, 0.2); animation: fadeInDown 1s ease; }
+        .hero p { font-size: 1.1rem; letter-spacing: 0.5em; color: var(--accent); font-weight: 700; text-transform: uppercase; animation: fadeInUp 1.2s ease; }
+        
+        /* 내용 충실성: Layout */
+        .container { max-width: 1100px; margin: 0 auto; padding: 100px 20px; }
+        .section-header { margin-bottom: 70px; border-left: 4px solid var(--accent); padding-left: 25px; opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+        .section-header.visible { opacity: 1; transform: translateY(0); }
+        .section-header h2 { font-size: 2.8rem; font-family: 'Playfair Display', serif; font-style: italic; margin-bottom: 8px; }
+        .section-header p { color: #888; text-transform: uppercase; font-size: 1rem; letter-spacing: 2px; font-weight: 300; }
+        
+        .content-box { background: var(--glass); padding: 50px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.05); margin-bottom: 80px; backdrop-filter: blur(10px); }
+        .content-box h3 { color: var(--accent); font-size: 1.5rem; margin-bottom: 20px; font-weight: 700; }
+        
+        .trend-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 80px; }
+        .trend-item { background: var(--card); padding: 40px; border: 1px solid #1a1a1a; border-radius: 2px; transition: 0.4s; }
+        .trend-item:hover { border-color: var(--accent); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(212,175,55,0.1); }
+        .trend-item h3 { color: var(--accent); margin-bottom: 20px; font-size: 1.4rem; font-weight: 700; border-bottom: 1px solid #222; padding-bottom: 10px; }
+        .trend-item p { font-size: 1rem; color: #ccc; font-weight: 300; }
+        
+        table { width: 100%; border-collapse: collapse; margin-top: 30px; font-size: 0.95rem; }
+        th { text-align: left; padding: 20px; border-bottom: 2px solid var(--accent); color: var(--accent); font-weight: 700; text-transform: uppercase; }
+        td { padding: 20px; border-bottom: 1px solid #1a1a1a; color: #ddd; font-weight: 300; }
+        
+        /* 창의성: Interactive Tool */
+        .interactive-tool { background: linear-gradient(135deg, #0a0a0a 0%, #000 100%); padding: 80px 30px; border-radius: 4px; border: 1px solid var(--accent); text-align: center; margin-top: 80px; position: relative; }
+        .interactive-tool::before { content: ''; position: absolute; top: -10px; left: -10px; right: -10px; bottom: -10px; border: 1px solid rgba(212,175,55,0.2); border-radius: 6px; z-index: -1; }
+        
+        #test-view h4 { font-size: 1.4rem; color: #fff; margin-bottom: 25px; font-weight: 400; }
+        .q-btn { background: none; color: #aaa; border: 1px solid #333; padding: 15px 30px; font-size: 1rem; cursor: pointer; margin: 10px; transition: 0.3s; border-radius: 2px; }
+        .q-btn:hover, .q-btn.selected { border-color: var(--accent); color: var(--accent); background-color: rgba(212,175,55,0.05); }
+        
+        .btn-skill { background: none; color: var(--accent); border: 1px solid var(--accent); padding: 15px 45px; font-size: 1rem; cursor: pointer; margin-top: 30px; transition: 0.3s; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: none; margin-left: auto; margin-right: auto; }
+        .btn-skill:hover { background: var(--accent); color: #000; box-shadow: 0 10px 20px rgba(212,175,55,0.2); }
+        
+        #skill-result { margin-top: 40px; font-size: 1.3rem; color: #fff; font-weight: 500; min-height: 60px; line-height: 1.8; opacity: 0; }
+        
+        footer { padding: 100px 20px; text-align: center; color: #555; border-top: 1px solid #1a1a1a; font-size: 0.9rem; font-weight: 300; }
+        
+        /* Animations */
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
-
     <section class="hero">
-        <div>
-            <p>2026 STRATEGIC REPORT</p>
-            <h1>Beyond the Visual</h1>
-            <p>BEAUTY-TAINMENT INSIGHT</p>
-        </div>
+        <div><p>2026 Strategic K-Ent Report</p><h1>Visual IP Era</h1><p>The Future of Beauty-tainment</p></div>
     </section>
 
     <div class="container">
-        <header class="section-header">
-            <p>Global Trend</p>
-            <h2>Visual IP Dynamics</h2>
-        </header>
-
-        <div class="trend-grid">
-            <div class="trend-item">
-                <h3>Digital Skin</h3>
-                <p>버추얼 아이돌의 '무결점 뷰티'가 현실 뷰티 산업의 R&D 기준을 바꾸고 있습니다.</p>
+        <section class="animate-section">
+            <div class="section-header"><p>01. Market Insight</p><h2>Beyond the Audio</h2></div>
+            <div class="content-box">
+                <h3>비주얼 중심 소비 시대</h3>
+                <p>숏폼 경제(TikTok, Reels)의 폭발적 성장으로 K-POP 소비 방식은 청각에서 시각으로 완전히 전환되었습니다. 이제 아티스트의 뮤직비디오는 곧 글로벌 뷰티 트렌드를 주도하는 가장 강력한 광고 매체이며, 아티스트의 고유한 분위기와 스타일은 엔터테인먼트 사의 핵심 브랜드 자산(Visual IP)으로 정의됩니다.</p>
             </div>
-            <div class="trend-item">
-                <h3>HMC Design</h3>
-                <p>Hair, Makeup, Costume의 유기적 결합이 아티스트의 고유한 세계관을 완성합니다.</p>
-            </div>
-            <div class="trend-item">
-                <h3>Fandom ROI</h3>
-                <p>단순 노출을 넘어 팬덤의 구매 전환율이 럭셔리 브랜드의 핵심 KPI가 되었습니다.</p>
-            </div>
-        </div>
-
-        <section class="data-section">
-            <header class="section-header">
-                <p>Luxury Alliance</p>
-                <h2>Ambassador Impact</h2>
-            </header>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Artist IP</th>
-                        <th>Brand House</th>
-                        <th>Strategic Value</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Blackpink Jennie</td>
-                        <td>Chanel Beauty</td>
-                        <td>MZ세대의 하이엔드 뷰티 입문 경로(Entry Point) 확보</td>
-                    </tr>
-                    <tr>
-                        <td>NewJeans</td>
-                        <td>Hera</td>
-                        <td>Young & Trendy 이미지의 로컬 브랜드 글로벌화</td>
-                    </tr>
-                    <tr>
-                        <td>BTS V</td>
-                        <td>Celine / Burberry</td>
-                        <td>'V Effect'를 통한 남성 뷰티 및 젠더리스 트렌드 주도</td>
-                    </tr>
-                </tbody>
-            </table>
         </section>
 
-        <section class="interactive-tool">
-            <p style="color:var(--accent)">SKILL CREATOR: CHROMAVERSE LAB</p>
-            <h2 style="font-family:'Playfair Display', serif; font-size: 2.5rem; margin-top:10px;">Find Your Visual IP</h2>
-            <p style="margin-top:15px; opacity:0.7;">당신의 분위기에 어울리는 2026 엔터 뷰티 컨셉을 제안합니다.</p>
+        <section class="animate-section">
+            <div class="section-header"><p>02. HMC Framework</p><h2>HMC 디렉팅 전략</h2></div>
+            <div class="trend-grid">
+                <div class="trend-item">
+                    <h3>Hair Strategy</h3>
+                    <p>시즌별 컨셉 컬러와 텍스처 설계를 통해 아티스트의 페르소나를 물리적으로 구현합니다.</p>
+                </div>
+                <div class="trend-item">
+                    <h3>Makeup IP</h3>
+                    <p>퍼스널 컬러 기반의 레이어 설계로 특정 립 컬러나 글리터를 브랜드 아이덴티티화합니다.</p>
+                </div>
+                <div class="trend-item">
+                    <h3>Costume Design</h3>
+                    <p>글로벌 패션 하우스와의 앰버서더십을 연결하여 Brand Equity를 극대화하는 최종 단계입니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="animate-section">
+            <div class="section-header"><p>03. Ambassador ROI</p><h2>글로벌 앰버서더의 가치</h2></div>
+            <div class="content-box">
+                <p>럭셔리 하우스와 K-POP 아티스트의 결합은 단순한 홍보를 넘어 MZ세대 타겟의 Entry Point 확보와 로컬 브랜드의 글로벌 리브랜딩을 이끄는 핵심 비즈니스 모델입니다.</p>
+                <table>
+                    <thead><tr><th>Artist</th><th>Brand</th><th>Strategic Value</th></tr></thead>
+                    <tbody>
+                        <tr><td>Jennie</td><td>Chanel Beauty</td><td>MZ세대의 하이엔드 뷰티 입문 경로 구축 및 압도적 화제성 생산</td></tr>
+                        <tr><td>NewJeans</td><td>Hera</td><td>전통적 로컬 브랜드의 Young & 글로벌 리브랜딩 성공 모델 제시</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="animate-section interactive-tool">
+            <p style="color:var(--accent); font-size: 0.8rem; letter-spacing: 3px; font-weight:700;">CHROMAVERSE LAB</p>
+            <h2 style="font-family:'Playfair Display', serif; font-size: 2.5rem; font-style:italic; margin-top:10px; border:none;">Find Your Visual IP</h2>
+            <p style="margin-top:15px; opacity:0.8; font-size: 1rem; font-weight:300;">간단한 스타일 성향 테스트를 통해 당신에게 가장 잘 어울리는 2026 K-뷰티 컨셉을 진단해 드립니다.</p>
             
-            <button class="btn-skill" onclick="analyzeBeauty()">진단 시작하기</button>
+            <div id="test-view" style="margin-top: 50px;">
+                <div class="question">
+                    <h4>Q1. 당신이 선호하는 메이크업 마무리감은?</h4>
+                    <button class="q-btn" onclick="selectAnswer(1, 'A')">투명한 물광</button>
+                    <button class="q-btn" onclick="selectAnswer(1, 'B')">절제된 매트</button>
+                </div>
+                <div class="question" style="margin-top: 30px;">
+                    <h4>Q2. 무대 위 아티스트가 되었을 때의 컨셉은?</h4>
+                    <button class="q-btn" onclick="selectAnswer(2, 'A')">사랑스러운 요정</button>
+                    <button class="q-btn" onclick="selectAnswer(2, 'B')">카리스마 있는 여신</button>
+                </div>
+            </div>
+
+            <button id="submit-btn" class="btn-skill" onclick="analyzeBeauty()">진단 결과 확인하기</button>
             <div id="skill-result"></div>
         </section>
     </div>
@@ -177,22 +130,40 @@
     </footer>
 
     <script>
+        // Scroll Animation
+        const sections = document.querySelectorAll('.section-header');
+        window.addEventListener('scroll', checkSections);
+        function checkSections() {
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if(sectionTop < window.innerHeight * 0.8) { section.classList.add('visible'); }
+            });
+        }
+        checkSections(); // Init check
+
+        // Interactive Test Logic
+        let answers = {1: null, 2: null};
+        function selectAnswer(q, a) {
+            answers[q] = a;
+            const buttons = event.target.parentElement.querySelectorAll('.q-btn');
+            buttons.forEach(btn => btn.classList.remove('selected'));
+            event.target.classList.add('selected');
+            if(answers[1] && answers[2]) { document.getElementById('submit-btn').style.display = 'block'; }
+        }
+
         function analyzeBeauty() {
-            const results = [
-                "✨ [GLITCH CHIC] : 가상과 현실을 넘나드는 네온 포인트 메이크업",
-                "💎 [SILENT LUXURY] : 절제된 색조와 피부 결을 강조하는 하이엔드 뷰티",
-                "🌸 [K-GARDEN] : 한국적 색채를 현대적으로 재해석한 소프트 레이어링",
-                "🔥 [CYBER PUNK] : 강렬한 아이라인과 메탈릭 파츠의 무대용 메이크업"
-            ];
-            const random = results[Math.floor(Math.random() * results.length)];
+            const results = {
+                'AA': "💎 [SILENT LUXURY] : 절제된 색조와 본연의 피부 결을 극대화하는 하이엔드 뷰티룩",
+                'AB': "✨ [GLITCH CHIC] : 투명한 피부 위에 네온 컬러나 파츠로 포인트를 주는 가상 세계 컨셉",
+                'BA': "🌸 [K-GARDEN] : 매트한 베이스에 한국적 색채를 소프트하게 레이어링한 사랑스러운 스타일",
+                'BB': "🔥 [CYBER PUNK] : 강렬한 스모키 아이라인과 메탈릭한 텍스처를 결합한 압도적 카리스마"
+            };
+            const resultKey = answers[1] + answers[2];
             const display = document.getElementById('skill-result');
-            
-            display.style.opacity = 0;
-            setTimeout(() => {
-                display.innerText = random;
-                display.style.opacity = 1;
-                display.style.transition = "opacity 0.8s ease";
-            }, 300);
+            display.innerText = results[resultKey];
+            display.style.opacity = 1;
+            display.style.transition = "opacity 1s ease";
+            document.getElementById('test-view').style.opacity = 0.5;
         }
     </script>
 </body>
