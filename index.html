@@ -3,156 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K-ENT Beauty Insight | Idol Styling</title>
+    <title>ENT-BEAUTY 2026 : THE VISUAL IP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Pretendard:wght@300;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #ff2d55; /* 아이돌 느낌의 핫핑크 */
-            --bg: #0f0f0f;
-            --card: #1e1e1e;
-            --text: #ffffff;
+            --primary: #f8f8f8;
+            --accent: #d4af37; /* 럭셔리 골드 포인트 */
+            --bg: #000000;
+            --card: #111111;
         }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Pretendard', sans-serif;
             background-color: var(--bg);
-            color: var(--text);
-            margin: 0;
-            line-height: 1.6;
+            color: var(--primary);
+            line-height: 1.7;
         }
 
-        header {
-            height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=1000');
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=2000');
             background-size: cover;
             background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            border-bottom: 4px solid var(--primary);
+            border-bottom: 1px solid #333;
         }
 
-        header h1 { font-size: 3rem; margin-bottom: 10px; text-shadow: 2px 2px 10px rgba(255,45,85,0.7); }
-        header p { font-size: 1.2rem; color: #ccc; }
-
-        .container { max-width: 1000px; margin: 50px auto; padding: 0 20px; }
-
-        .section-title {
-            font-size: 2rem;
-            border-left: 5px solid var(--primary);
-            padding-left: 15px;
-            margin-bottom: 30px;
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-style: italic;
+            margin-bottom: 20px;
         }
 
-        /* 그리드 디자인 */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .card {
+        .hero p { font-size: 1.2rem; letter-spacing: 0.3em; color: var(--accent); }
+
+        /* Magazine Layout */
+        .container { max-width: 1200px; margin: 0 auto; padding: 100px 20px; }
+
+        .section-header { margin-bottom: 60px; text-align: center; }
+        .section-header h2 { font-size: 3rem; font-family: 'Playfair Display', serif; margin-bottom: 10px; }
+        .section-header p { color: #888; text-transform: uppercase; letter-spacing: 2px; }
+
+        /* Trend Cards */
+        .trend-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+        .trend-item {
             background: var(--card);
-            padding: 25px;
-            border-radius: 15px;
-            transition: transform 0.3s ease;
-            border: 1px solid #333;
+            padding: 40px;
+            border: 1px solid #222;
+            transition: all 0.5s ease;
         }
-        .card:hover { transform: translateY(-10px); border-color: var(--primary); }
-        .card h3 { color: var(--primary); margin-top: 0; }
+        .trend-item:hover { border-color: var(--accent); transform: translateY(-10px); }
+        .trend-item h3 { font-size: 1.5rem; color: var(--accent); margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 10px; }
 
-        /* 창의성 점수용: 인터랙티브 버튼 */
-        .lucky-btn {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 30px;
-            font-size: 1.1rem;
+        /* Professional Table */
+        .data-section { margin-top: 150px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 30px; }
+        th { text-align: left; padding: 20px; border-bottom: 2px solid var(--accent); color: var(--accent); text-transform: uppercase; }
+        td { padding: 20px; border-bottom: 1px solid #222; }
+
+        /* Interactive Skill Creator Area */
+        .interactive-tool {
+            margin-top: 150px;
+            background: linear-gradient(45deg, #111, #000);
+            padding: 80px;
+            text-align: center;
+            border-radius: 4px;
+            border: 1px solid var(--accent);
+        }
+
+        .btn-skill {
+            background: none;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 15px 40px;
+            font-size: 1rem;
             cursor: pointer;
-            display: block;
-            margin: 40px auto;
+            margin-top: 30px;
+            transition: 0.3s;
+            text-transform: uppercase;
             font-weight: bold;
-            box-shadow: 0 5px 15px rgba(255,45,85,0.4);
         }
+        .btn-skill:hover { background: var(--accent); color: #000; }
 
-        footer { text-align: center; padding: 40px; color: #666; font-size: 0.9rem; }
+        #skill-result { margin-top: 40px; font-size: 1.2rem; font-weight: 300; min-height: 50px; }
 
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { padding: 12px; border-bottom: 1px solid #333; text-align: left; }
-        th { color: var(--primary); }
+        footer { padding: 80px 20px; text-align: center; color: #444; border-top: 1px solid #222; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>ENTER-BEAUTY LAB</h1>
-    <p>무대 위 화려함을 완성하는 엔터테인먼트 뷰티의 모든 것</p>
-</header>
-
-<div class="container">
-    <section>
-        <h2 class="section-title">2024-2026 Idol Beauty Trends</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Glass Skin 2.0</h3>
-                <p>단순한 물광을 넘어, 조명 아래에서도 무너지지 않는 투명한 피부 표현이 대세입니다. 고정력이 강한 세미 글로우 베이스가 핵심입니다.</p>
-            </div>
-            <div class="card">
-                <h3>Point Eyelash</h3>
-                <p>가닥가닥 강조된 인형 같은 속눈썹 디자인. 아티스트의 눈매에 맞춰 커스텀하는 '가닥 속눈썹' 기법이 필수입니다.</p>
-            </div>
-            <div class="card">
-                <h3>Glitter Accent</h3>
-                <p>무대 조명을 반사하는 대형 파츠와 글리터 포인트. 눈 밑 빰(Cheek) 영역까지 확장된 화려한 연출이 유행입니다.</p>
-            </div>
+    <section class="hero">
+        <div>
+            <p>2026 STRATEGIC REPORT</p>
+            <h1>Beyond the Visual</h1>
+            <p>BEAUTY-TAINMENT INSIGHT</p>
         </div>
     </section>
 
-    <section style="margin-top: 60px;">
-        <h2 class="section-title">Artist Styling Analysis</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>분야</th>
-                    <th>핵심 스타일</th>
-                    <th>분석 키워드</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>걸그룹</td>
-                    <td>Y2K 레트로 펑크</td>
-                    <td>블루 아이섀도우, 누드 립, 하이라이터</td>
-                </tr>
-                <tr>
-                    <td>보이그룹</td>
-                    <td>젠더리스 소프트</td>
-                    <td>스모키 음영, 자연스러운 혈색, 웨티 헤어</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+    <div class="container">
+        <header class="section-header">
+            <p>Global Trend</p>
+            <h2>Visual IP Dynamics</h2>
+        </header>
 
-    <section>
-        <button class="lucky-btn" onclick="recommendStyle()">오늘 나에게 맞는 아이돌 메이크업은?</button>
-        <p id="result" style="text-align: center; font-weight: bold; color: var(--primary); font-size: 1.2rem;"></p>
-    </section>
-</div>
+        <div class="trend-grid">
+            <div class="trend-item">
+                <h3>Digital Skin</h3>
+                <p>버추얼 아이돌의 '무결점 뷰티'가 현실 뷰티 산업의 R&D 기준을 바꾸고 있습니다.</p>
+            </div>
+            <div class="trend-item">
+                <h3>HMC Design</h3>
+                <p>Hair, Makeup, Costume의 유기적 결합이 아티스트의 고유한 세계관을 완성합니다.</p>
+            </div>
+            <div class="trend-item">
+                <h3>Fandom ROI</h3>
+                <p>단순 노출을 넘어 팬덤의 구매 전환율이 럭셔리 브랜드의 핵심 KPI가 되었습니다.</p>
+            </div>
+        </div>
 
-<footer>
-    &copy; 2026 Entertainment Beauty Assignment. Created by [Your Name].
-</footer>
+        <section class="data-section">
+            <header class="section-header">
+                <p>Luxury Alliance</p>
+                <h2>Ambassador Impact</h2>
+            </header>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Artist IP</th>
+                        <th>Brand House</th>
+                        <th>Strategic Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Blackpink Jennie</td>
+                        <td>Chanel Beauty</td>
+                        <td>MZ세대의 하이엔드 뷰티 입문 경로(Entry Point) 확보</td>
+                    </tr>
+                    <tr>
+                        <td>NewJeans</td>
+                        <td>Hera</td>
+                        <td>Young & Trendy 이미지의 로컬 브랜드 글로벌화</td>
+                    </tr>
+                    <tr>
+                        <td>BTS V</td>
+                        <td>Celine / Burberry</td>
+                        <td>'V Effect'를 통한 남성 뷰티 및 젠더리스 트렌드 주도</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
-<script>
-    function recommendStyle() {
-        const styles = [
-            "✨ 화려한 조명 아래 '글리터 여신' 메이크업",
-            "💄 힙하고 시크한 '스모키 캣' 메이크업",
-            "🌸 사랑스러움 가득 '복숭아 과즙' 메이크업",
-            "💎 깔끔하고 세련된 '올드머니' 뷰티 룩"
-        ];
-        const random = styles[Math.floor(Math.random() * styles.length)];
-        document.getElementById('result').innerText = random;
-    }
-</script>
+        <section class="interactive-tool">
+            <p style="color:var(--accent)">SKILL CREATOR: CHROMAVERSE LAB</p>
+            <h2 style="font-family:'Playfair Display', serif; font-size: 2.5rem; margin-top:10px;">Find Your Visual IP</h2>
+            <p style="margin-top:15px; opacity:0.7;">당신의 분위기에 어울리는 2026 엔터 뷰티 컨셉을 제안합니다.</p>
+            
+            <button class="btn-skill" onclick="analyzeBeauty()">진단 시작하기</button>
+            <div id="skill-result"></div>
+        </section>
+    </div>
 
+    <footer>
+        <p>Created by Kim Ju-yeon | Student ID: 20241516</p>
+        <p style="margin-top:10px;">Entertainment Beauty Strategy Course - Assignment #2</p>
+    </footer>
+
+    <script>
+        function analyzeBeauty() {
+            const results = [
+                "✨ [GLITCH CHIC] : 가상과 현실을 넘나드는 네온 포인트 메이크업",
+                "💎 [SILENT LUXURY] : 절제된 색조와 피부 결을 강조하는 하이엔드 뷰티",
+                "🌸 [K-GARDEN] : 한국적 색채를 현대적으로 재해석한 소프트 레이어링",
+                "🔥 [CYBER PUNK] : 강렬한 아이라인과 메탈릭 파츠의 무대용 메이크업"
+            ];
+            const random = results[Math.floor(Math.random() * results.length)];
+            const display = document.getElementById('skill-result');
+            
+            display.style.opacity = 0;
+            setTimeout(() => {
+                display.innerText = random;
+                display.style.opacity = 1;
+                display.style.transition = "opacity 0.8s ease";
+            }, 300);
+        }
+    </script>
 </body>
 </html>
